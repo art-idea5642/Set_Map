@@ -15,8 +15,6 @@ public class WordsPrinter {
     public void printUniqueWords() {
         Set<String> uniqueWords = new HashSet<>(words);
 
-        for (String word : uniqueWords) {
-            System.out.println(word);
-        }
+            System.out.println(uniqueWords);
     }
 }

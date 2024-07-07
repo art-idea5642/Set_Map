@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 public class NumbersPrinter {
     private final List<Integer> numbers;
@@ -19,16 +16,15 @@ public class NumbersPrinter {
     }
 
     public void printEvenNumbers() {
-        Set<Integer> evenNumbers = new TreeSet<>();
+        Collections.sort(numbers);
+        int prevNum = Integer.MIN_VALUE;
+
 
         for (int number : numbers) {
-            if (number % 2 == 0) {
-                evenNumbers.add(number);
+            if (number % 2 == 0 && number != prevNum) {
+                System.out.println(number);
+                prevNum = number;
             }
-        }
-
-        for (int number : evenNumbers) {
-            System.out.println(number);
         }
     }
 }
